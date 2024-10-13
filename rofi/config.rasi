@@ -1,0 +1,12 @@
+configuration {
+	show-icons: true;
+	display-drun: " ";
+    display-run: " ";
+    display-filebrowser: " ";
+    display-window: " ";
+	font: "JetBrainsMono Nerd Font 10";
+	icon-theme: "Tela-circle-dracula";
+	mouse-primary: "accept";
+}
+
+@theme "~/.config/rofi/theme.rasi"
