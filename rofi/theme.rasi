@@ -15,6 +15,7 @@
 
 window {
   width: 50%;
+  height: 65%;
   background-color: @bg;
 }
 

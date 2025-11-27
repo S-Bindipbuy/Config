@@ -1,12 +1,13 @@
 vim.g.mapleader = " "
-vim.cmd("set number")
-vim.cmd("set relativenumber")
-vim.cmd("set autoindent")
-vim.cmd("set tabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set smarttab")
-vim.cmd("set softtabstop=4")
-vim.cmd("set mouse=a")
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.autoindent = true
+vim.opt.cindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
+vim.opt.softtabstop = 4
+vim.opt.mouse = "a"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -23,10 +24,10 @@ require("lazy").setup("plugins")
 
 vim.cmd("colorscheme catppuccin")
 vim.opt.termguicolors = true
+require("keybind")
+vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { bg = "NONE", fg = "#89b4fa" })
 
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-vim.keymap.set({ 'n', 'v' },'<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>lb', ':LspRestart<CR>')
-vim.keymap.set('n', '<C-s>', ':w<CR>')
-vim.keymap.set('n', '<C-b>', ':q<CR>')
-vim.keymap.set('n', '<F2>', ':TransparentToggle<CR>')
+vim.g.zig_fmt_autosave = 0
+vim.g.omni_sql_no_default_maps = 1
+vim.g.php_sql_query = 1
+vim.g.php_htmlInStrings = 1

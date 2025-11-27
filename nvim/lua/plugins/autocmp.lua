@@ -4,12 +4,18 @@ return {
 		dependencies = {
 			'saadparwaiz1/cmp_luasnip',
 			'rafamadriz/friendly-snippets'
-		}
+		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
+			local ls = require("luasnip")
+			ls.filetype_extend("javascriptreact", {"html"})
+			ls.filetype_extend("php", {"html"})
+			ls.filetype_extend("blade", {"html"})
+			ls.filetype_extend("typescriptreact", {"html"})
+
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
 				snippet = {

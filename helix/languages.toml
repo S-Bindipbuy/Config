@@ -1,0 +1,4 @@
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+file-types = ["rs"]
